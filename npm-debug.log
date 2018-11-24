@@ -1,0 +1,100 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'publish',
+1 verbose cli   '--access',
+1 verbose cli   'public' ]
+2 info using npm@3.5.2
+3 info using node@v8.10.0
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/home/valcinei/Documents/Projects/cut-optimizer',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /home/valcinei/.npm/cut-optimizer/0.0.1/package.tgz not in flight; packing
+9 info lifecycle cut-optimizer@0.0.1~prepublish: cut-optimizer@0.0.1
+10 silly lifecycle cut-optimizer@0.0.1~prepublish: no script for prepublish, continuing
+11 verbose tar pack [ '/home/valcinei/.npm/cut-optimizer/0.0.1/package.tgz',
+11 verbose tar pack   '/home/valcinei/Documents/Projects/cut-optimizer' ]
+12 verbose tarball /home/valcinei/.npm/cut-optimizer/0.0.1/package.tgz
+13 verbose folder /home/valcinei/Documents/Projects/cut-optimizer
+14 verbose addLocalTarball adding from inside cache /home/valcinei/.npm/cut-optimizer/0.0.1/package.tgz
+15 silly cache afterAdd cut-optimizer@0.0.1
+16 verbose afterAdd /home/valcinei/.npm/cut-optimizer/0.0.1/package/package.json not in flight; writing
+17 verbose afterAdd /home/valcinei/.npm/cut-optimizer/0.0.1/package/package.json written
+18 silly publish { name: 'cut-optimizer',
+18 silly publish   version: '0.0.1',
+18 silly publish   description: 'Bin pack cut optimize',
+18 silly publish   main: 'index.js',
+18 silly publish   types: 'dist/index.d.ts',
+18 silly publish   scripts: { test: 'test' },
+18 silly publish   repository:
+18 silly publish    { type: 'git',
+18 silly publish      url: 'git+https://github.com/valcinei/cut-optimizer.git' },
+18 silly publish   keywords: [ 'cut', 'optimize', 'bin', 'pack', 'planning' ],
+18 silly publish   author:
+18 silly publish    { name: 'Valcinei Silva',
+18 silly publish      email: 'valcinei@live.com',
+18 silly publish      url: 'https://github.com/valcinei' },
+18 silly publish   license: 'ISC',
+18 silly publish   bugs: { url: 'https://github.com/valcinei/cut-optimizer/issues' },
+18 silly publish   homepage: 'https://github.com/valcinei/cut-optimizer#readme',
+18 silly publish   gitHead: '8b247564b22efdbfd830464bbfdb5d9696e9709f',
+18 silly publish   readme: 'ERROR: No README data found!',
+18 silly publish   _id: 'cut-optimizer@0.0.1',
+18 silly publish   _shasum: 'ddd2a78d88a162759e17414cd2260698538b12cb',
+18 silly publish   _from: '.' }
+19 verbose getPublishConfig undefined
+20 silly mapToRegistry name cut-optimizer
+21 silly mapToRegistry using default registry
+22 silly mapToRegistry registry https://registry.npmjs.org/
+23 silly mapToRegistry uri https://registry.npmjs.org/cut-optimizer
+24 verbose publish registryBase https://registry.npmjs.org/
+25 silly publish uploading /home/valcinei/.npm/cut-optimizer/0.0.1/package.tgz
+26 verbose request uri https://registry.npmjs.org/cut-optimizer
+27 verbose request sending authorization for write operation
+28 info attempt registry request try #1 at 4:03:28 PM
+29 verbose request using bearer token for auth
+30 verbose request id baa42465e1d5000f
+31 http request PUT https://registry.npmjs.org/cut-optimizer
+32 http 403 https://registry.npmjs.org/cut-optimizer
+33 verbose headers { date: 'Sat, 24 Nov 2018 20:03:30 GMT',
+33 verbose headers   'content-type': 'application/json',
+33 verbose headers   'transfer-encoding': 'chunked',
+33 verbose headers   connection: 'keep-alive',
+33 verbose headers   'set-cookie':
+33 verbose headers    [ '__cfduid=d3e329f9f76269d5af82c0e3c7adf74461543089809; expires=Sun, 24-Nov-19 20:03:29 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+33 verbose headers   'cf-ray': '47ee7aad8fe2881e-GIG',
+33 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+33 verbose headers   vary: 'Accept-Encoding',
+33 verbose headers   server: 'cloudflare',
+33 verbose headers   'content-encoding': 'gzip' }
+34 verbose request invalidating /home/valcinei/.npm/registry.npmjs.org/cut-optimizer on PUT
+35 error publish Failed PUT 403
+36 verbose stack Error: You cannot publish over the previously published versions: 0.0.1. : cut-optimizer
+36 verbose stack     at makeError (/usr/share/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+36 verbose stack     at CachingRegistryClient.<anonymous> (/usr/share/npm/node_modules/npm-registry-client/lib/request.js:252:14)
+36 verbose stack     at /usr/share/npm/node_modules/npm-registry-client/lib/request.js:178:7
+36 verbose stack     at Gunzip.onEnd (zlib.js:131:5)
+36 verbose stack     at emitNone (events.js:111:20)
+36 verbose stack     at Gunzip.emit (events.js:208:7)
+36 verbose stack     at endReadableNT (_stream_readable.js:1064:12)
+36 verbose stack     at _combinedTickCallback (internal/process/next_tick.js:138:11)
+36 verbose stack     at process._tickCallback (internal/process/next_tick.js:180:9)
+37 verbose statusCode 403
+38 verbose pkgid cut-optimizer
+39 verbose cwd /home/valcinei/Documents/Projects/cut-optimizer
+40 error Linux 4.15.0-39-generic
+41 error argv "/usr/bin/node" "/usr/bin/npm" "publish" "--access" "public"
+42 error node v8.10.0
+43 error npm  v3.5.2
+44 error code E403
+45 error You cannot publish over the previously published versions: 0.0.1. : cut-optimizer
+46 error If you need help, you may report this error at:
+46 error     <https://github.com/npm/npm/issues>
+47 verbose exit [ 1, true ]

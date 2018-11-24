@@ -1,6 +1,6 @@
 {
   "name": "cut-optimizer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Bin pack cut optimize",
   "main": "index.js",
   "types": "dist/index.d.ts",
