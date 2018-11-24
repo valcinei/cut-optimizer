@@ -1,5 +1,5 @@
 export interface ICutOptimizer {
-    optmizer(items: Shape[], options?:any): any;
+    optmize(items: Shape[], options?:any): any;
 }
 
 export class Shape {

@@ -99,7 +99,7 @@ export class CutOptimizer implements ICutOptimizer {
         }
     }
 
-    optmizer(items: Shape[], options?: any) {
+    optmize(items: Shape[], options?: any) {
         options = options || {};
         const packer = new CutOptimizer();
         const inPlace = options.inPlace || false;
