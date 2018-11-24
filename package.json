@@ -2,7 +2,7 @@
   "name": "cut-optimizer",
   "version": "0.0.2",
   "description": "Bin pack cut optimize",
-  "main": "index.js",
+  "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "test"
@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/valcinei/cut-optimizer/issues"
   },
-  "homepage": "https://github.com/valcinei/cut-optimizer#readme"
+  "homepage": "https://github.com/valcinei/cut-optimizer#readme",
+  "dependencies": {
+    "cut-optimizer": "^0.0.2"
+  }
 }
