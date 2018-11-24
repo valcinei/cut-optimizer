@@ -1,14 +1,14 @@
-import { ICutOptimizer, Shape } from './ICutOptimizer';
-
-export class CutOptimizer implements ICutOptimizer {
-    private root: any;
-    constructor() { }
-
-    private fit(blocks: Shape[]): void {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var ICutOptimizer_1 = require("./ICutOptimizer");
+var CutOptimizer = /** @class */ (function () {
+    function CutOptimizer() {
+    }
+    CutOptimizer.prototype.fit = function (blocks) {
         // tslint:disable-next-line:prefer-const
-        let n, node, block: any, len = blocks.length, fit;
-        const width = len > 0 ? blocks[0].width : 0;
-        const height = len > 0 ? blocks[0].height : 0;
+        var n, node, block, len = blocks.length, fit;
+        var width = len > 0 ? blocks[0].width : 0;
+        var height = len > 0 ? blocks[0].height : 0;
         this.root = { x: 0, y: 0, width: width, height: height };
         for (n = 0; n < len; n++) {
             block = blocks[n];
@@ -16,54 +16,55 @@ export class CutOptimizer implements ICutOptimizer {
                 fit = this.splitNode(node, block.width, block.height);
                 block.x = fit.x;
                 block.y = fit.y;
-            } else {
+            }
+            else {
                 fit = this.growNode(block.width, block.height);
                 block.x = fit.x;
                 block.y = fit.y;
             }
         }
-    }
-
-    private findNode(root: any, width: number, height: number): any {
+    };
+    CutOptimizer.prototype.findNode = function (root, width, height) {
         if (root.used) {
             return this.findNode(root.right, width, height) || this.findNode(root.down, width, height);
-        } else if ((width <= root.width) && (height <= root.height)) {
+        }
+        else if ((width <= root.width) && (height <= root.height)) {
             return root;
-        } else {
+        }
+        else {
             return null;
         }
-    }
-
-    private splitNode(node: any, width: number, height: number) {
+    };
+    CutOptimizer.prototype.splitNode = function (node, width, height) {
         node.used = true;
         node.down = { x: node.x, y: node.y + height, width: node.width, height: node.height - height };
         node.right = { x: node.x + width, y: node.y, width: node.width - width, height: height };
         return node;
-    }
-
-    private growNode(width: number, height: number) {
-        const canGrowDown = (width <= this.root.width);
-        const canGrowRight = (height <= this.root.height);
-
+    };
+    CutOptimizer.prototype.growNode = function (width, height) {
+        var canGrowDown = (width <= this.root.width);
+        var canGrowRight = (height <= this.root.height);
         // tslint:disable-next-line:max-line-length
-        const shouldGrowRight = canGrowRight && (this.root.height >= (this.root.width + width)); // attempt to keep square-ish by growing right when height is much greater than width
+        var shouldGrowRight = canGrowRight && (this.root.height >= (this.root.width + width)); // attempt to keep square-ish by growing right when height is much greater than width
         // tslint:disable-next-line:max-line-length
-        const shouldGrowDown = canGrowDown && (this.root.width >= (this.root.height + height)); // attempt to keep square-ish by growing down  when width  is much greater than height
-
+        var shouldGrowDown = canGrowDown && (this.root.width >= (this.root.height + height)); // attempt to keep square-ish by growing down  when width  is much greater than height
         if (shouldGrowRight) {
             return this.growRight(width, height);
-        } else if (shouldGrowDown) {
+        }
+        else if (shouldGrowDown) {
             return this.growDown(width, height);
-        } else if (canGrowRight) {
+        }
+        else if (canGrowRight) {
             return this.growRight(width, height);
-        } else if (canGrowDown) {
+        }
+        else if (canGrowDown) {
             return this.growDown(width, height);
-        } else {
+        }
+        else {
             return null;
         } // need to ensure sensible root starting size to avoid this happening
-    }
-
-    private growRight(width: number, height: number) {
+    };
+    CutOptimizer.prototype.growRight = function (width, height) {
         this.root = {
             used: true,
             x: 0,
@@ -73,15 +74,15 @@ export class CutOptimizer implements ICutOptimizer {
             down: this.root,
             right: { x: this.root.width, y: 0, width: width, height: this.root.height }
         };
-        let node;
+        var node;
         if (node = this.findNode(this.root, width, height)) {
             return this.splitNode(node, width, height);
-        } else {
+        }
+        else {
             return null;
         }
-    }
-
-    private growDown(width: number, height: number) {
+    };
+    CutOptimizer.prototype.growDown = function (width, height) {
         this.root = {
             used: true,
             x: 0,
@@ -91,43 +92,38 @@ export class CutOptimizer implements ICutOptimizer {
             down: { x: 0, y: this.root.height, width: this.root.width, height: height },
             right: this.root
         };
-        let node;
+        var node;
         if (node = this.findNode(this.root, width, height)) {
             return this.splitNode(node, width, height);
-        } else {
+        }
+        else {
             return null;
         }
-    }
-
-    optmizer(items: Shape[], options?: any) {
+    };
+    CutOptimizer.prototype.optmizer = function (items, options) {
         options = options || {};
-        const packer = new CutOptimizer();
-        const inPlace = options.inPlace || false;
-
+        var packer = new CutOptimizer();
+        var inPlace = options.inPlace || false;
         // Clone the items.
-        let newItems = items.map((item)=> { return inPlace ? item : { width: item.width, height: item.height, item: item }; });
-
-        newItems = newItems.sort((a?: Shape | any, b?:Shape | any) =>{
+        var newItems = items.map(function (item) { return inPlace ? item : { width: item.width, height: item.height, item: item }; });
+        newItems = newItems.sort(function (a, b) {
             // TODO: check that each actually HAS a width and a height.
             // Sort based on the size (area) of each block.
             return (b.width * b.height) - (a.width * a.height);
         });
-
         packer.fit(newItems);
-
-        const w = newItems.reduce( (curr, item:  Shape | any) =>{ return Math.max(curr, item.x + item.width); }, 0);
-        const h = newItems.reduce( (curr, item:  Shape | any) =>{ return Math.max(curr, item.y + item.height); }, 0);
-
-        const ret = {
+        var w = newItems.reduce(function (curr, item) { return Math.max(curr, item.x + item.width); }, 0);
+        var h = newItems.reduce(function (curr, item) { return Math.max(curr, item.y + item.height); }, 0);
+        var ret = {
             width: w,
             height: h,
-            items: [new Shape()]
+            items: [new ICutOptimizer_1.Shape()]
         };
-
         if (!inPlace) {
             ret.items = newItems;
         }
-
         return ret;
-    }
-}
+    };
+    return CutOptimizer;
+}());
+exports.CutOptimizer = CutOptimizer;
