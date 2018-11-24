@@ -1,0 +1,27 @@
+{
+  "name": "cut-optimizer",
+  "version": "1.0.0",
+  "description": "Bin pack cut optimize",
+  "main": "index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/valcinei/cut-optimizer.git"
+  },
+  "keywords": [
+    "cut",
+    "optimize",
+    "bin",
+    "pack",
+    "planning"
+  ],
+  "author": "Valcinei Silva <valcinei@live.com> (https://github.com/valcinei)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/valcinei/cut-optimizer/issues"
+  },
+  "homepage": "https://github.com/valcinei/cut-optimizer#readme"
+}
