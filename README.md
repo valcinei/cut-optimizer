@@ -1,6 +1,6 @@
 # Cut Optimize
 
-*Read this in other languages: [English](README.md), [Português-BR](README.pt-br.md).*
+*Read this in other languages: [English](README.md), [Português-BR](README-pt-br.md).*
 
 Bin pack Lib to cut optimize.
 
