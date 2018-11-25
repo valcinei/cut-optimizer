@@ -2,7 +2,16 @@ import { ICutOptimizer, Shape } from './ICutOptimizer';
 
 export class CutOptimizer implements ICutOptimizer {
     private root: any;
-    constructor() { }
+    
+    constructor(w?: number, h?: number) { 
+        if(w && h){
+            this.init(w, h);
+        }
+    }
+
+    private init (w?: number, h?: number) {
+            this.root = { x: 0, y: 0, w: w, h: h };
+    }
 
     private fit(blocks: Shape[]): void {
         // tslint:disable-next-line:prefer-const
