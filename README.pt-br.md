@@ -68,8 +68,8 @@ console.log(cut_opt.optimize(shapes));
      { width: 22, height: 10, item: [Object], x: 20, y: 145 } ] }
 /*
 ```
-## [Typescript Demo](https://cut-optimize-canvas-demo-ts.stackblitz.io)
-## [Angular 6 Demo](https://cut-optimize-canvas-demo-ts.stackblitz.io)
+## [Typescript Demo](https://stackblitz.com/edit/cut-optimize-canvas-demo-ts?embed=1&file=index.ts)
+## [Angular 6 Demo](https://stackblitz.com/edit/cut-optimize-canvas-demo-ng?embed=1&file=src/app/app.component.ts)
 
 ## Contributing
 Pull requests são bem vindas.Para grandes mudanças, por favor, abra uma issue primeiro para discutir o que você gostaria de mudar.
