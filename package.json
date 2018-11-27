@@ -6,6 +6,8 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "./node_modules/typescript/bin/tsc && ./node_modules/.bin/jasmine",
+    "test-w": "./node_modules/.bin/nodemon ./node_modules/.bin/jasmine",
+    "ts-w": "./node_modules/typescript/bin/tsc --watch",
     "pub": "tsc && npm publish"
   },
   "repository": {
@@ -33,6 +35,7 @@
     "@types/node": "^10.12.10",
     "jasmine": "^3.3.0",
     "jasmine-ts-console-reporter": "^3.1.1",
+    "nodemon": "^1.18.7",
     "tslint": "^5.11.0",
     "typescript": "^3.1.6"
   }
