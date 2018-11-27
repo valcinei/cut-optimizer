@@ -28,7 +28,7 @@ let shapes: Shape [] =[
  new Shape(13, 20),
  new Shape(120, 241)
 ]
-console.log(cut_opt.optmize(shapes));
+console.log(cut_opt.optimize(shapes));
 
 //Output
 /*{ width: 241,
@@ -55,7 +55,7 @@ var shapes = [
     new cut_optimizer.Shape(13, 20),// OR { height: 13 width: 20 }
     new cut_optimizer.Shape(120, 241)// OR { height: 120, width: 241}
 ];
-console.log(cut_opt.optmize(shapes));
+console.log(cut_opt.optimize(shapes));
 
 
 //Output
