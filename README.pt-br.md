@@ -14,34 +14,6 @@ Você pode usar o [npm](https://www.npmjs.com/package/cut-optimizer) para realiz
 npm i cut-optimizer --save
 ```
 
-## Usando com Typescript
-
-```typescript
-import { CutOptimizer, Shape } from "cut-optimizer";
-
-let cut_opt: CutOptimizer = new CutOptimizer();
-
-let shapes: Shape [] =[
- new Shape(10, 22),
- new Shape(12, 220),
- new Shape(13, 230),
- new Shape(13, 20),
- new Shape(120, 241)
-]
-console.log(cut_opt.optimize(shapes));
-
-//Output
-/*{ width: 241,
-  height: 158,
-  items: 
-   [ { width: 241, height: 120, item: [Object], x: 0, y: 0 },
-     { width: 230, height: 13, item: [Object], x: 0, y: 120 },
-     { width: 220, height: 12, item: [Object], x: 0, y: 133 },
-     { width: 20, height: 13, item: [Object], x: 0, y: 145 },
-     { width: 22, height: 10, item: [Object], x: 20, y: 145 } ] }
-/*
-```
-
 ## Usando com Javascript 
 
 ```javascript
@@ -69,6 +41,35 @@ console.log(cut_opt.optimize(shapes));
      { width: 22, height: 10, item: [Object], x: 20, y: 145 } ] }
 /*
 ```
+## Usando com Typescript
+
+```typescript
+import { CutOptimizer, Shape } from "cut-optimizer";
+
+let cut_opt: CutOptimizer = new CutOptimizer();
+
+let shapes: Shape [] =[
+ new Shape(10, 22),
+ new Shape(12, 220),
+ new Shape(13, 230),
+ new Shape(13, 20),
+ new Shape(120, 241)
+]
+console.log(cut_opt.optimize(shapes));
+
+//Output
+/*{ width: 241,
+  height: 158,
+  items: 
+   [ { width: 241, height: 120, item: [Object], x: 0, y: 0 },
+     { width: 230, height: 13, item: [Object], x: 0, y: 120 },
+     { width: 220, height: 12, item: [Object], x: 0, y: 133 },
+     { width: 20, height: 13, item: [Object], x: 0, y: 145 },
+     { width: 22, height: 10, item: [Object], x: 20, y: 145 } ] }
+/*
+```
+## [Typescript Demo](https://cut-optimize-canvas-demo-ts.stackblitz.io)
+## [Angular 6 Demo](https://cut-optimize-canvas-demo-ts.stackblitz.io)
 
 ## Contributing
 Pull requests são bem vindas.Para grandes mudanças, por favor, abra uma issue primeiro para discutir o que você gostaria de mudar.
