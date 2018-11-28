@@ -16,6 +16,6 @@ let shapes = [
 
 describe("Create Cut Opitimizer", () => {
     it("Has optimized shapes", () => {
-        expect(cut_opt.optimize(shapes).items.length).toBeGreaterThan(0);
+        expect(cut_opt.optimize(shapes).items.length).toEqual(100000000);
     }); 
 } );
